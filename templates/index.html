@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">Communities</div>
+            <div class="nav-right">
+                <a href="#">Nav bar here</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to Communities</h1>
+        </section>
+        <h2>Live Chat</h2>
+        <div id="chatbox"></div>
+        <input type="text" id="messageInput" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+    </main>
+
+    <script>
+        // Connect to Flask WebSocket server
+        const socket = io.connect("http://127.0.0.1:5000");
+
+        socket.on("connect", () => {
+            console.log("✅ Connected to WebSocket server!");
+        });
+
+        socket.on("message", (data) => {
+            console.log("📩 Message received:", data);
+            const chatbox = document.getElementById("chatbox");
+            let messageElement = document.createElement("p");
+            messageElement.textContent = data;
+            chatbox.appendChild(messageElement);
+        });
+
+        function sendMessage() {
+            const messageInput = document.getElementById("messageInput");
+            const message = messageInput.value.trim();
+            if (message === "") return;
+
+            socket.send(message); // Send message to WebSocket server
+            messageInput.value = ""; // Clear input
+            console.log("📤 Sent message:", message);
+        }
+    </script>
+</body>
+</html>
