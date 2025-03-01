@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mozart Misconception</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="Content-Security-Policy" content="frame-src 'self' https://www.youtube.com;">
+    <script defer src="chat.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">Communities</div>
+            <div class="nav-right">
+                <a href="">Nav bar here</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Welcome to Communities</h1>
+        </section>
+
+        <h2>Live WebSocket Chat</h2>
+    <div id="chatbox"></div>
+    <input type="text" id="messageInput" placeholder="Type a message...">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        // Connect to your WebSocket server
+        const socket = new WebSocket("wss://545cdbe7-9ae0-47f0-88b4-581f9fa61b47-00-15dsysnkuh3xx.picard.replit.dev");
+
+        socket.onopen = () => {
+            console.log("✅ Connected to WebSocket server!");
+        };
+
+        socket.onmessage = (event) => {
+            console.log("📩 Message from server:", event.data);
+            const chatbox = document.getElementById("chatbox");
+            let messageElement = document.createElement("p");
+            messageElement.textContent = event.data;
+            chatbox.appendChild(messageElement);
+        };
+
+        function sendMessage() {
+            const messageInput = document.getElementById("messageInput");
+            if (!messageInput.value) return;
+
+            socket.send(messageInput.value); // Send message to WebSocket server
+            messageInput.value = "";
+        }
+    </script>
+       
+
+        
+    </main>
+</body>
+</html>
