@@ -25,6 +25,11 @@
         <div id="chatbox"></div>
         <input type="text" id="messageInput" placeholder="Type a message...">
         <button onclick="sendMessage()">Send</button>
+
+        <h2>Chat with AI friend!</h2>
+        <div id="ai-chatbox"></div>
+        <input type="text" id="aiMessageInput" placeholder="Ask AI anything...">
+        <button onclick="sendAIMessage()">Ask AI</button>
     </main>
 
     <script>
@@ -32,11 +37,11 @@
         const socket = io.connect("http://127.0.0.1:5000");
 
         socket.on("connect", () => {
-            console.log("✅ Connected to WebSocket server!");
+            console.log("Connected to WebSocket server!");
         });
 
         socket.on("message", (data) => {
-            console.log("📩 Message received:", data);
+            console.log("Message received:", data);
             const chatbox = document.getElementById("chatbox");
             let messageElement = document.createElement("p");
             messageElement.textContent = data;
@@ -51,6 +56,36 @@
             socket.send(message); // Send message to WebSocket server
             messageInput.value = ""; // Clear input
             console.log("📤 Sent message:", message);
+        }
+
+        //AI Chatbot
+        function sendAIMessage(){
+            const aiMessageInput = document.getElementById("aiMessageInput");
+            const userText = aiMessageInput.value.trim();
+            if (userText === "") return;
+
+            //Display user's message in the chatbox
+            const aiChatbox = document.getElementById("ai-chatbox");
+            let userMessage = document.createElement("p");
+            userMessage.textContent = "You: " +userText;
+            aiChatbox.appendChild(userMessage);
+
+            //send user input to flask AI endpoint
+            // Send user input to Flask AI endpoint
+            fetch("/chatbot", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ text: userText }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                let botMessage = document.createElement("p");
+                botMessage.textContent = "AI: " + data.reply;
+                aiChatbox.appendChild(botMessage);
+            })
+            .catch(error => console.error("AI Chat Error:", error));
+
+            aiMessageInput.value = "";
         }
     </script>
 </body>
