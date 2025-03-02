@@ -5,52 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Chat</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Jaro' rel='stylesheet'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
 </head>
 <body>
     <header>
-        <nav>
-            <div class="nav-left">Communities</div>
-            <div class="nav-right">
-                <a href="#">Nav bar here</a>
-            </div>
+        <nav class="nav">
+            <div class="nav-item" href="">EN</div>
+            <div class="nav-item">Home</div>
+            <div class="nav-item" href="about-section">About</div>
+            <div class="nav-item">Live Chat</div>
+            <div class="nav-item">AI Friend</div>
         </nav>
     </header>
-
     <main>
-        <section class="hero">
-            <h1>Welcome to Communities</h1>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Communities</h1>
+                <h2>Welcome to the Live Chat</h2>
+                <p>Engage with our community and get instant support.</p>
+            </div>
         </section>
-        <h2>Live Chat</h2>
-        <div id="chatbox"></div>
-        <input type="text" id="messageInput" placeholder="Type a message...">
-        <button onclick="sendMessage()">Send</button>
+        <section class="about-section">
+            <h2>About</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi vel consectetur interdum, nisl nisi consectetur nisi, euismod consectetur nisi nisl consectetur nisi.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi vel consectetur interdum, nisl nisi consectetur nisi, euismod consectetur nisi nisl consectetur nisi.</p>
+        </section>
+
+        <section class="chat-holder">
+            <section class="chat-section">
+                <h2>Live Chat</h2>
+                <div id="chatbox"></div>
+                <input type="text" id="messageInput" placeholder="Type a message...">
+                <button onclick="sendMessage()">Send</button>
+            </section>
+
+            <section class="ai-chat-section">
+                <h2>Chat with AI friend!</h2>
+                <div id="ai-chatbox"></div>
+                <input type="text" id="aiMessageInput" placeholder="Ask AI anything...">
+                <button onclick="sendAIMessage()">Ask AI</button>
+            </section>
+        </section>
+
+
     </main>
-
+    <footer>
+        <p>Footer Content Here</p>
+    </footer>
     <script>
-        // Connect to Flask WebSocket server
-        const socket = io.connect("http://127.0.0.1:5000");
+                // Connect to Flask WebSocket server
+      const socket = io.connect("http://127.0.0.1:5000");
+socket.on("connect", () => {
+    console.log("✅ Connected to WebSocket server!");
+});
+socket.on("message", (data) => {
+    console.log("📩 Message received:", data);
+    const chatbox = document.getElementById("chatbox");
+    let messageElement = document.createElement("p");
 
-        socket.on("connect", () => {
-            console.log("✅ Connected to WebSocket server!");
-        });
+    // Check if the message is from user1 or user2
+    if (data.user === "user1") {
+        messageElement.classList.add("user-message");
+        messageElement.innerHTML = `<span class="username">User1:</span> ${data.message}`;
+    } else if (data.user === "user2") {
+        messageElement.classList.add("user-message");
+        messageElement.innerHTML = `<span class="username">User2:</span> ${data.message}`;
+    }
 
-        socket.on("message", (data) => {
-            console.log("📩 Message received:", data);
-            const chatbox = document.getElementById("chatbox");
-            let messageElement = document.createElement("p");
-            messageElement.textContent = data;
-            chatbox.appendChild(messageElement);
-        });
+    chatbox.appendChild(messageElement);
+    chatbox.scrollTop = chatbox.scrollHeight; // Auto-scroll to the latest message
+});
 
-        function sendMessage() {
-            const messageInput = document.getElementById("messageInput");
-            const message = messageInput.value.trim();
-            if (message === "") return;
+function sendMessage() {
+    const messageInput = document.getElementById("messageInput");
+    const message = messageInput.value.trim();
+    if (message === "") return;
 
-            socket.send(message); // Send message to WebSocket server
-            messageInput.value = ""; // Clear input
-            console.log("📤 Sent message:", message);
+    // Assuming "user1" is sending the message for demonstration purposes
+    socket.send({ user: "user1", message: message });
+    messageInput.value = "";
+    console.log("📤 Sent message:", message);
+}
+
+
+        //AI Chatbot
+        function sendAIMessage(){
+            const aiMessageInput = document.getElementById("aiMessageInput");
+            const userText = aiMessageInput.value.trim();
+            if (userText === "") return;
+
+            //Display user's message in the chatbox
+            const aiChatbox = document.getElementById("ai-chatbox");
+            let userMessage = document.createElement("p");
+            userMessage.textContent = "You: " +userText;
+            aiChatbox.appendChild(userMessage);
+
+            //send user input to flask AI endpoint
+            // Send user input to Flask AI endpoint
+            fetch("/chatbot", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ text: userText }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                let botMessage = document.createElement("p");
+                botMessage.textContent = "AI: " + data.reply;
+                aiChatbox.appendChild(botMessage);
+            })
+            .catch(error => console.error("AI Chat Error:", error));
+
+            aiMessageInput.value = "";
         }
     </script>
 </body>
