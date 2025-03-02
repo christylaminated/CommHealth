@@ -1,0 +1,111 @@
+2025-03-01 22:43:10,870 - ERROR - Invalid session 0zAttwTizEq8NllfAAA5 (further occurrences of this error will be logged with level INFO)
+2025-03-01 22:43:42,975 - DEBUG - worked
+2025-03-01 22:43:43,226 - DEBUG - worked
+2025-03-01 22:44:39,553 - DEBUG - will socket work?
+2025-03-01 22:44:39,895 - DEBUG - socket initialized!
+2025-03-01 22:44:39,895 - DEBUG - gemini api working?
+2025-03-01 22:44:39,895 - DEBUG - gemini created
+2025-03-01 22:44:39,896 - DEBUG - Starting Flask WebSocket server...
+2025-03-01 22:44:39,938 - INFO -  * Restarting with stat
+2025-03-01 22:44:41,019 - DEBUG - will socket work?
+2025-03-01 22:44:41,176 - DEBUG - socket initialized!
+2025-03-01 22:44:41,176 - DEBUG - gemini api working?
+2025-03-01 22:44:41,176 - DEBUG - gemini created
+2025-03-01 22:44:41,177 - DEBUG - Starting Flask WebSocket server...
+2025-03-01 22:44:41,217 - WARNING -  * Debugger is active!
+2025-03-01 22:44:41,233 - INFO -  * Debugger PIN: 137-962-645
+2025-03-01 22:44:57,741 - DEBUG - Flask is serving index.html
+2025-03-01 22:45:02,797 - DEBUG - in chatbox function
+2025-03-01 22:45:04,173 - DEBUG - AI Response Received: Hi there. It's good to hear from you. How are you doing today?  I'm here to listen if you'd like to talk, or just be present if you prefer a quiet moment.
+
+2025-03-01 22:45:04,173 - DEBUG - ai response: Hi there. It's good to hear from you. How are you doing today?  I'm here to listen if you'd like to talk, or just be present if you prefer a quiet moment.
+
+2025-03-01 22:45:13,470 - DEBUG - in chatbox function
+2025-03-01 22:45:15,915 - DEBUG - AI Response Received: I hear you saying you need help, and I'm here for you.  It takes courage to reach out, and I want you to know I'm listening.  Could you tell me a little more about what's going on?  Even a small step can make a difference, and we can figure things out together.  There's no pressure, just take your time.
+
+2025-03-01 22:45:15,915 - DEBUG - ai response: I hear you saying you need help, and I'm here for you.  It takes courage to reach out, and I want you to know I'm listening.  Could you tell me a little more about what's going on?  Even a small step can make a difference, and we can figure things out together.  There's no pressure, just take your time.
+
+2025-03-01 22:45:35,792 - DEBUG - in chatbox function
+2025-03-01 22:45:38,848 - DEBUG - AI Response Received: That's lovely!  Pink is such a versatile color.  It can be soft and delicate, or bright and vibrant.  It's interesting how colors can resonate with us and even reflect aspects of our personalities.  Is there anything special about pink that draws you to it?  I'd love to hear more if you feel like sharing.
+
+2025-03-01 22:45:38,848 - DEBUG - ai response: That's lovely!  Pink is such a versatile color.  It can be soft and delicate, or bright and vibrant.  It's interesting how colors can resonate with us and even reflect aspects of our personalities.  Is there anything special about pink that draws you to it?  I'd love to hear more if you feel like sharing.
+
+2025-03-01 22:45:49,860 - DEBUG - in chatbox function
+2025-03-01 22:45:53,900 - DEBUG - AI Response Received: It seems like you're having a little trouble figuring out your favorite color. That's okay!  Sometimes it's hard to pin down what we truly prefer.  
+
+Think about what colors you're naturally drawn to. Do you find yourself gravitating towards certain colors in your clothes, decorations, or the things you buy?  What colors make you feel good, peaceful, or energized?  There's no right or wrong answer – it's all about what resonates with you.  
+
+If you're still unsure, you can try exploring different colors in different ways. Look at pictures of nature, art, or fashion. Try doodling or painting with different colors.  Pay attention to how each color makes you feel.  This can help you discover which colors truly speak to you.  Take your time, and enjoy the process of exploring!
+
+2025-03-01 22:45:53,900 - DEBUG - ai response: It seems like you're having a little trouble figuring out your favorite color. That's okay!  Sometimes it's hard to pin down what we truly prefer.  
+
+Think about what colors you're naturally drawn to. Do you find yourself gravitating towards certain colors in your clothes, decorations, or the things you buy?  What colors make you feel good, peaceful, or energized?  There's no right or wrong answer – it's all about what resonates with you.  
+
+If you're still unsure, you can try exploring different colors in different ways. Look at pictures of nature, art, or fashion. Try doodling or painting with different colors.  Pay attention to how each color makes you feel.  This can help you discover which colors truly speak to you.  Take your time, and enjoy the process of exploring!
+
+2025-03-01 22:47:48,974 - DEBUG - worked
+2025-03-01 22:47:49,228 - DEBUG - worked
+2025-03-01 23:30:49,929 - DEBUG - will socket work?
+2025-03-01 23:30:50,254 - DEBUG - socket initialized!
+2025-03-01 23:30:50,254 - DEBUG - gemini api working?
+2025-03-01 23:30:50,254 - DEBUG - gemini created
+2025-03-01 23:30:50,255 - DEBUG - Starting Flask WebSocket server...
+2025-03-01 23:30:50,307 - INFO -  * Restarting with stat
+2025-03-01 23:30:51,325 - DEBUG - will socket work?
+2025-03-01 23:30:51,465 - DEBUG - socket initialized!
+2025-03-01 23:30:51,465 - DEBUG - gemini api working?
+2025-03-01 23:30:51,465 - DEBUG - gemini created
+2025-03-01 23:30:51,466 - DEBUG - Starting Flask WebSocket server...
+2025-03-01 23:30:51,506 - WARNING -  * Debugger is active!
+2025-03-01 23:30:51,522 - INFO -  * Debugger PIN: 137-962-645
+2025-03-01 23:31:06,275 - ERROR - Invalid session _iZKQf3coJ9QKVYjAACT (further occurrences of this error will be logged with level INFO)
+2025-03-01 23:31:31,836 - INFO -  * Detected change in '/Users/christy/Documents/Projects/communities/app.py', reloading
+2025-03-01 23:31:32,170 - INFO -  * Restarting with stat
+2025-03-01 23:31:32,903 - DEBUG - worked
+2025-03-01 23:31:39,186 - DEBUG - will socket work?
+2025-03-01 23:31:39,491 - DEBUG - socket initialized!
+2025-03-01 23:31:39,491 - DEBUG - gemini api working?
+2025-03-01 23:31:39,491 - DEBUG - gemini created
+2025-03-01 23:31:39,492 - DEBUG - Starting Flask WebSocket server...
+2025-03-01 23:31:39,536 - INFO -  * Restarting with stat
+2025-03-01 23:31:40,613 - DEBUG - will socket work?
+2025-03-01 23:31:40,747 - DEBUG - socket initialized!
+2025-03-01 23:31:40,747 - DEBUG - gemini api working?
+2025-03-01 23:31:40,747 - DEBUG - gemini created
+2025-03-01 23:31:40,748 - DEBUG - Starting Flask WebSocket server...
+2025-03-01 23:31:40,787 - WARNING -  * Debugger is active!
+2025-03-01 23:31:40,801 - INFO -  * Debugger PIN: 137-962-645
+2025-03-01 23:35:21,748 - DEBUG - worked
+2025-03-01 23:35:21,998 - DEBUG - worked
+2025-03-01 23:35:25,673 - DEBUG - will socket work?
+2025-03-01 23:35:25,817 - DEBUG - socket initialized!
+2025-03-01 23:35:25,817 - DEBUG - gemini api working?
+2025-03-01 23:35:25,817 - DEBUG - gemini created
+2025-03-01 23:35:25,818 - DEBUG - Starting Flask WebSocket server...
+2025-03-01 23:35:25,857 - INFO -  * Restarting with stat
+2025-03-01 23:35:26,937 - DEBUG - will socket work?
+2025-03-01 23:35:27,091 - DEBUG - socket initialized!
+2025-03-01 23:35:27,091 - DEBUG - gemini api working?
+2025-03-01 23:35:27,091 - DEBUG - gemini created
+2025-03-01 23:35:27,092 - DEBUG - Starting Flask WebSocket server...
+2025-03-01 23:35:27,131 - WARNING -  * Debugger is active!
+2025-03-01 23:35:27,144 - INFO -  * Debugger PIN: 137-962-645
+2025-03-01 23:36:33,175 - DEBUG - Flask is serving index.html
+2025-03-01 23:36:50,467 - DEBUG - Flask is serving index.html
+2025-03-01 23:37:06,616 - DEBUG - 📩 Message received: fsdfsd
+2025-03-01 23:41:41,056 - DEBUG - Flask is serving index.html
+2025-03-01 23:41:44,120 - DEBUG - 📩 Message received: hi
+2025-03-01 23:41:51,505 - DEBUG - 📩 Message received: hello
+2025-03-01 23:41:55,920 - DEBUG - in chatbox function
+2025-03-01 23:41:56,897 - DEBUG - AI Response Received: Hi there. It's good to hear from you. How can I help you today?
+
+2025-03-01 23:41:56,897 - DEBUG - ai response: Hi there. It's good to hear from you. How can I help you today?
+
+2025-03-01 23:42:02,449 - DEBUG - 📩 Message received: you
+2025-03-01 23:42:09,125 - DEBUG - in chatbox function
+2025-03-01 23:42:11,231 - DEBUG - AI Response Received: I hear you. It sounds like you're feeling sad, and that's perfectly okay. It's natural to feel sadness sometimes.  Would you like to talk a little more about what might be causing you to feel this way? I'm here to listen without judgment, and I want to support you however I can. Even if you don't feel like sharing specifics right now, know that I'm here for you.  Sometimes just acknowledging the feeling can be a helpful first step.
+
+2025-03-01 23:42:11,232 - DEBUG - ai response: I hear you. It sounds like you're feeling sad, and that's perfectly okay. It's natural to feel sadness sometimes.  Would you like to talk a little more about what might be causing you to feel this way? I'm here to listen without judgment, and I want to support you however I can. Even if you don't feel like sharing specifics right now, know that I'm here for you.  Sometimes just acknowledging the feeling can be a helpful first step.
+
+2025-03-01 23:42:36,653 - DEBUG - worked
+2025-03-01 23:42:36,908 - DEBUG - worked
