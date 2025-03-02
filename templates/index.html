@@ -57,10 +57,10 @@
                 // Connect to Flask WebSocket server
       const socket = io.connect("http://127.0.0.1:5000");
 socket.on("connect", () => {
-    console.log("✅ Connected to WebSocket server!");
+    console.log("Connected to WebSocket server!");
 });
 socket.on("message", (data) => {
-    console.log("📩 Message received:", data);
+    console.log("Message received:", data);
     const chatbox = document.getElementById("chatbox");
     let messageElement = document.createElement("p");
 
@@ -85,7 +85,7 @@ function sendMessage() {
     // Assuming "user1" is sending the message for demonstration purposes
     socket.send({ user: "user1", message: message });
     messageInput.value = "";
-    console.log("📤 Sent message:", message);
+    console.log(" Sent message:", message);
 }
 
 
