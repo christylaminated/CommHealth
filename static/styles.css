@@ -1,0 +1,194 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Jaro', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #73449d;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+main {
+    flex: 1;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.hero-section {
+    background-color: #73449d;
+    color: white;
+    padding: 50px;
+    width: 100%;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 3em; /* Adjust font size */
+    color: #D2B48C; /* Warm tan color */
+}
+
+.hero-content h2 {
+    font-size: 2.5em; /* Adjust font size */
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.about-section {
+    background-color: #f8c8dc; /* Match the communities section background */
+    color: #73449d; /* Text color to match theme */
+    padding: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2.5em; /* Adjust font size */
+    color: #000000; /* Warm tan color */
+}
+
+.about-section p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.chat-holder {
+    background-color: #73449d; /* Purple background color */
+    padding: 20px; /* Optional: Add padding for spacing */
+    border-radius: 10px; /* Optional: Add border radius for rounded corners */
+    width: 100%;
+}
+
+.chat-section, .ai-chat-section {
+    background-color: white; /* White background for inner sections */
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    color: #D2B48C; /* Warm tan color for section text */
+    border-radius: 10px;
+}
+
+.chat-section h2, .ai-chat-section h2 {
+    font-size: 2.5em; /* Adjust font size */
+    color: #73449d; /* Purple color for headings */
+    text-align: center;
+}
+
+#chatbox, #ai-chatbox {
+    background-color: white; /* White background for chat boxes */
+    padding: 20px;
+    border-radius: 5px;
+    height: 300px;
+    overflow-y: auto;
+    color: black;
+}
+
+input[type="text"], button {
+    margin-top: 10px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: calc(100% - 42px);
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #73449d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #5d3d84;
+}
+
+#aiMessageInput {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: calc(100% - 42px);
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.user-message .username {
+    font-weight: bold;
+    color: #73449d;
+}
+
+footer {
+    background-color: #9370DB;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: static;
+    width: 100%;
+    bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .nav-item {
+        font-size: 10px;
+    }
+
+    input[type="text"] {
+        width: calc(100% - 22px);
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-item {
+        font-size: 8px;
+    }
+
+    input[type="text"] {
+        width: calc(100% - 22px);
+    }
+}
